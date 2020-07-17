@@ -23,6 +23,13 @@ android {
     }
 }
 
+task makeJar(type: Copy) {
+    from('build/intermediates/bundles/default/')
+    into('build/libs/')
+    include('classes.jar')
+    rename('classes.jar', 'mp_androidchart_v1.0.0.jar')
+}
+
 dependencies {
     implementation 'androidx.annotation:annotation:1.0.0'
     testImplementation 'junit:junit:4.12'

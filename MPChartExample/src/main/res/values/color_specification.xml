@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--主色调颜色-->
+    <color name="colorPrimary">#0092ED</color>
+    <color name="colorPrimaryDark">#516DDA</color>
+    <color name="colorAccent">#15B571</color>
+    <!--深色调颜色-->
+    <color name="colorPrimaryPoint">#86E3BC</color>
+    <!--浅色调颜色-->
+    <color name="colorPrimary20">#20516DDA</color>
+
+
+    <!--页面背景颜色-->
+    <color name="pageBg">#EFEFEF</color>
+
+    <!--分割线颜色-->
+    <color name="dividingLine">#EEEEEE</color>
+
+    <color name="itemClickBg">#F7F7F7</color>
+
+    <!--标题字体颜色-->
+    <color name="textColorTitle">#333333</color>
+
+    <!--副标题字体颜色-->
+    <color name="textColorSubtitle">#595959</color>
+
+    <!--输入框提示字体颜色-->
+    <color name="textColorHint">#A8A8A8</color>
+
+    <color name="editTextBg">#F5F5F5</color>
+
+    <!--重要信息字体颜色-->
+    <color name="textColorImportant">#FF7838</color>
+    <!--错误字体颜色-->
+    <color name="textColorError">#FF402D</color>
+    <color name="textColorErrorDark">#e32f45</color>
+
+    <color name="textColorPrimary">@color/colorPrimaryDark</color>
+
+    <color name="btnTextColorPrimary">#FFFFFF</color>
+    <color name="btnTextColorPrimaryUnable">#7FFFFFFF</color>
+
+    <color name="grayBg">#F5F5F5</color>
+
+    <color name="color_orgian">#FFF8E6</color>
+    <color name="color_origian_text">#FD9D59</color>
+    <color name="app_background">#F6F6F6</color>
+    <color name="colorPrimary_twenty">#20516DDA</color>
+    <color name="gray_twenty">#20979797</color>
+    <color name="key_ok_color">#1280FA</color>
+    <color name="key_ok_color_pressed">#0174f2</color>
+    <color name="wechat_color">#6BB916</color>
+    <color name="alipay_color">#1296DB</color>
+    <color name="union_color">#E55B5B</color>
+    <color name="quick_color">#F5A623</color>
+    <color name="card_color">#748BE2</color>
+
+    <color name="color_pink">#EC7578</color>
+
+    <color name="bg_text_tips_color">#F7E5BB</color>
+    <color name="bg_black_text_color">#2B2B2B</color>
+</resources>

@@ -6,8 +6,7 @@ import com.github.mikephil.charting.formatter.ValueFormatter;
 /**
  * Created by philipp on 02/06/16.
  */
-public class DayAxisValueFormatter extends ValueFormatter
-{
+public class DayAxisValueFormatter extends ValueFormatter{
 
     private final String[] mMonths = new String[]{
             "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"

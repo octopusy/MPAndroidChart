@@ -5,8 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/sharp_primary_four_radius"
     android:orientation="vertical"
-    android:padding="@dimen/quarterfinalPadding"
-    android:gravity="center_vertical">
+    android:paddingTop="@dimen/quarterfinalPadding"
+    android:paddingBottom="@dimen/quarterfinalPadding"
+    android:paddingStart="@dimen/halfDefaultPadding"
+    android:paddingEnd="@dimen/defaultPadding"
+    android:gravity="center_vertical"
+    tools:ignore="RtlCompat">
 
     <TextView
         android:id="@+id/tvXData"

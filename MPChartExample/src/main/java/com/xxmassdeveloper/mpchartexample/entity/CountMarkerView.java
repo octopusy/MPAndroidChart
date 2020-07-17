@@ -1,14 +1,16 @@
-package com.xxmassdeveloper.mpchartexample.custom;
+package com.xxmassdeveloper.mpchartexample.entity;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
+import android.text.TextUtils;
 import android.widget.TextView;
+
 import com.github.mikephil.charting.components.MarkerView;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.utils.MPPointF;
 import com.xxmassdeveloper.mpchartexample.OnSelectMarkerViewListener;
 import com.xxmassdeveloper.mpchartexample.R;
+
 import java.util.List;
 
 /**
@@ -16,16 +18,15 @@ import java.util.List;
  *
  * @author Philipp Jahoda
  */
-@SuppressLint("ViewConstructor")
-public class XYMarkerView extends MarkerView {
+public class CountMarkerView extends MarkerView {
 
     private final TextView tvXData;
     private final TextView tvYData;
     private List<String> xListData;
     private OnSelectMarkerViewListener mOnSelectMarkerViewListener;
 
-    public XYMarkerView(Context context,OnSelectMarkerViewListener onSelectMarkerViewListener) {
-        super(context, R.layout.custom_marker_view);
+    public CountMarkerView(Context context, OnSelectMarkerViewListener onSelectMarkerViewListener) {
+        super(context, R.layout.trade_custom_marker_view);
         tvXData = findViewById(R.id.tvXData);
         tvYData = findViewById(R.id.tvYData);
         this.mOnSelectMarkerViewListener = onSelectMarkerViewListener;
@@ -38,14 +39,29 @@ public class XYMarkerView extends MarkerView {
     @Override
     public void refreshContent(Entry e, Highlight highlight) {
         int position = (int)e.getX();
-        tvXData.setText("" + e.getX());
-        tvYData.setText(/*"交易金额:" +*/ "" + e.getY());
-        mOnSelectMarkerViewListener.onSelectMarkViewPosition(position);
+        String valueData = "";
+        try {
+            if(!xListData.isEmpty()){
+                valueData =  xListData.get(position);
+            } else {
+                valueData = String.valueOf(position);
+            }
+            if(!TextUtils.isEmpty(valueData) && valueData.length() >2) {
+                valueData = valueData.substring(valueData.length() -2 ,valueData.length());
+            }
+            tvXData.setText(valueData + "月");
+            tvYData.setText("￥" + PublicMethodUtils.formatBigWanAmount("" + e.getY(),false));
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+        if(null != mOnSelectMarkerViewListener) {
+            mOnSelectMarkerViewListener.onSelectMarkViewPosition(position);
+        }
         super.refreshContent(e, highlight);
     }
 
     @Override
     public MPPointF getOffset() {
-        return new MPPointF(-(getWidth() / 2), -getHeight());
+        return new MPPointF(-(getWidth() / 2)- 20, -getHeight());
     }
 }

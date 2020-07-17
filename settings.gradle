@@ -3,5 +3,4 @@ include 'MPChartLib'
 include 'MPChartExample'
 //include ':MPChartLib-Realm'
 //project(':MPChartLib-Realm').projectDir = new File('../MPAndroidChart-Realm/MPChartLib-Realm')
-
-
+include ':app'

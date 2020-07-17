@@ -6,30 +6,21 @@ import com.github.mikephil.charting.formatter.ValueFormatter;
 
 import java.text.DecimalFormat;
 
-public class MyValueFormatter extends ValueFormatter
-{
+public class MyDataValueFormatter extends ValueFormatter {
 
-    private final DecimalFormat mFormat;
     private String suffix;
 
-    public MyValueFormatter(String suffix) {
-        mFormat = new DecimalFormat("###,###,###,##0");
+    public MyDataValueFormatter(String suffix) {
         this.suffix = suffix;
     }
 
     @Override
     public String getFormattedValue(float value) {
-        return mFormat.format(value) + suffix;
+        return suffix + value;
     }
 
     @Override
     public String getAxisLabel(float value, AxisBase axis) {
-        if (axis instanceof XAxis) {
-            return mFormat.format(value);
-        } else if (value > 0) {
-            return mFormat.format(value) + suffix;
-        } else {
-            return mFormat.format(value);
-        }
+        return "" + value;
     }
 }
